@@ -2,8 +2,8 @@ name: Deploy To Render
 
 on:
   pull_request:
-  types: closed
-  branches:
+    types: closed
+    branches:
       - main
 
 jobs:
