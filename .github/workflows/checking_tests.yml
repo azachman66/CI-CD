@@ -4,7 +4,6 @@ on:
   pull_request:
     branches:
       - develop
-      - staging
 
 jobs:
   test:
@@ -23,9 +22,10 @@ jobs:
       - name: Install dependencies
         run: npm install
       
-      - name: Build App
-        run: npm run build
-
-      - name: Run vitest tests
-        run: npm run test
+      - name: Cypress Tests
+        uses: cypress-io/github-action@v6
+        with:
+          build: npm run build
+          start: npm run start
+          component: true
 
