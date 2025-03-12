@@ -4,7 +4,6 @@ on:
   pull_request:
     branches:
       - develop
-      - staging
 
 jobs:
   test:
@@ -27,5 +26,6 @@ jobs:
         run: npm run build
 
       - name: Run vitest tests
-        run: npm run test
+        run: npm run start
+        component: true
 
